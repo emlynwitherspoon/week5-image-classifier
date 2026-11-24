@@ -57,6 +57,8 @@ I successfully trained my model using 150 images in Teachable Machine.
 - Incorrect predictions: 1
 - Overall accuracy: 93.3%
 
+### 2.3 Predict
 
+No, I don't think the accuracy will stay at 93.3% because I trained the model using my own hand in the same room and lighting.
 
-        - 
+         
