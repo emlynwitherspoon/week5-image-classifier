@@ -61,4 +61,41 @@ I successfully trained my model using 150 images in Teachable Machine.
 
 No, I don't think the accuracy will stay at 93.3% because I trained the model using my own hand in the same room and lighting.
 
-         
+## Part 3 - Break It
+
+### 3.1 Run Four Hostile Tests
+
+I tested my model under four different conditions to see how well it would perform outside of its original training environment.
+
+| Test Condition | Rock (%) | Paper (%) | Scissors (%) |
+|---|---|---|---|
+| Different place | 100, 99, 98, 99, 99 | 99, 97, 100, 95, 99 | 99, 95, 80, 75, 99 |
+| Different light | 99, 100, 100, 98, 99 | 97, 94, 99, 100, 100 | 72, 67, 81, 90, 96 |
+| Different distance or angle | 90, 81, 60, 72, 75 | 21, 50, 18, 19, 98 | 94, 72, 66, 82, 35 |
+| Someone else's hand | 99, 86, 82, 98, 15 | 59, 39, 90, 87, 70 | 16, 30, 33, 15, 17 |
+
+### 3.2 Report the Damage
+
+| Test | Accuracy | Worst failure |
+|---|---|---|
+| Part 2 baseline | 14/15 (93.3%) | — |
+| Different place | Not fully recorded | Paper predicted as Rock at 99% |
+| Different light | Not fully recorded | Scissors confidence dropped to 67% |
+| Different distance | Not fully recorded | Paper confidence dropped to 18% |
+| Someone else's hand | Not fully recorded | Scissors confidence dropped to 15% |
+
+The test using someone else's hand showed the biggest drop in confidence, especially for scissors. This suggests that the model was paying attention to the appearance of my hand instead of just the hand gestures.
+
+## Part 4 - Diagnose and Fix One Thing
+
+### 4.1 Form a Hypothesis
+
+I think my model learned the appearance of my own hand instead of focusing only on the shape of each gesture.         
+
+### 4.2 Change One Thing and Retrain
+
+I added images of my daughter's hand to the existing dataset for rock, paper, and scissors. I then retrained the model and tested it again using her hand.
+
+### 4.3 Did It Work?
+
+Before retraining, the model struggled to recognize my daughter's hand, especially scissors. After retraining, the model performed better at recognizing her gestures. My recorded results suggest an improvement, but I did not fully record the accuracy before retraining, so I cannot calculate the exact improvement.
